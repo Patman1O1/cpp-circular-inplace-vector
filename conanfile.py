@@ -2,8 +2,8 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
 import os
 
-class CppCircularInplaceVector(ConanFile):
-    name = "cpp_circular_inplace_vector"
+class CircularInplaceVector(ConanFile):
+    name = "circular_inplace_vector"
     version = "0.1.0"
     author = "Patman1O1"
     description = ""
@@ -44,6 +44,6 @@ class CppCircularInplaceVector(ConanFile):
     def package(self) -> None: CMake(self).install()
 
     def package_info(self) -> None:
-        self.cpp_info.set_property("cmake_target_name", "collections::cpp_circular_inplace_vector")
+        self.cpp_info.set_property("cmake_target_name", "collections::circular_inplace_vector")
         self.cpp_info.bindirs = []
         self.cpp_info.libdirs = []
