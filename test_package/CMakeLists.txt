@@ -41,7 +41,7 @@ if(PROJECT_IS_TOP_LEVEL)
 endif()
 
 # ── Dependencies ─────────────────────────────────────────────────────────────
-find_package(cpp_circular_inplace_vector REQUIRED)
+find_package(circular_inplace_vector REQUIRED)
 include(GNUInstallDirs)
 
 # ── Subdirectories ───────────────────────────────────────────────────────────
