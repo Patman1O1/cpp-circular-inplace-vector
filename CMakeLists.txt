@@ -1,6 +1,6 @@
 # ── Information ──────────────────────────────────────────────────────────────
 cmake_minimum_required(VERSION 4.3.0)
-project("cpp_circular_inplace_vector"
+project("circular_inplace_vector"
         VERSION 0.1.0
         DESCRIPTION ""
         LANGUAGES CXX
@@ -68,50 +68,50 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Target: cpp_circular_inplace_vector_headers
-# Alias: collections::cpp_circular_inplace_vector_headers
+# Target: circular_inplace_vector_headers
+# Alias: collections::circular_inplace_vector_headers
 # Type: Interface Library
 # ───────────────────────────────────────────────────────────────────────────── 
 # Target definition
-add_library(cpp_circular_inplace_vector_headers INTERFACE)
+add_library(circular_inplace_vector_headers INTERFACE)
 
 # Target alias
-add_library(collections::cpp_circular_inplace_vector_headers 
+add_library(collections::circular_inplace_vector_headers 
     ALIAS
-        cpp_circular_inplace_vector_headers
+        circular_inplace_vector_headers
 )
 
 # Target headers
-target_include_directories(cpp_circular_inplace_vector_headers
+target_include_directories(circular_inplace_vector_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Target: cpp_circular_inplace_vector
-# Alias: collections::cpp_circular_inplace_vector
+# Target: circular_inplace_vector
+# Alias: collections::circular_inplace_vector
 # Type: Interface Library
-# Dependencies: collections::cpp_circular_inplace_vector_headers
+# Dependencies: collections::circular_inplace_vector_headers
 # ─────────────────────────────────────────────────────────────────────────────
 # Target definition
-add_library(cpp_circular_inplace_vector INTERFACE)
+add_library(circular_inplace_vector INTERFACE)
 
 # Target alias
-add_library(collections::cpp_circular_inplace_vector
+add_library(collections::circular_inplace_vector
     ALIAS
-        cpp_circular_inplace_vector
+        circular_inplace_vector
 )
 
 # Target dependencies
-target_link_libraries(cpp_circular_inplace_vector
+target_link_libraries(circular_inplace_vector
     INTERFACE
-        collections::cpp_circular_inplace_vector_headers
+        collections::circular_inplace_vector_headers
 )
 
 # Target properties
-set_target_properties(cpp_circular_inplace_vector PROPERTIES
-        OUTPUT_NAME cpp_circular_inplace_vector
+set_target_properties(circular_inplace_vector PROPERTIES
+        OUTPUT_NAME circular_inplace_vector
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         CXX_VISIBILITY_PRESET hidden
@@ -119,12 +119,12 @@ set_target_properties(cpp_circular_inplace_vector PROPERTIES
 )
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
-    # Install cpp_circular_inplace_vector
-    install(TARGETS cpp_circular_inplace_vector
-            RUNTIME COMPONENT cpp_circular_inplace_vector
-            LIBRARY COMPONENT cpp_circular_inplace_vector
-            NAMELINK_COMPONENT cpp_circular_inplace_vector
-            ARCHIVE COMPONENT cpp_circular_inplace_vector
+    # Install circular_inplace_vector
+    install(TARGETS circular_inplace_vector
+            RUNTIME COMPONENT circular_inplace_vector
+            LIBRARY COMPONENT circular_inplace_vector
+            NAMELINK_COMPONENT circular_inplace_vector
+            ARCHIVE COMPONENT circular_inplace_vector
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
